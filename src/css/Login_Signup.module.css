@@ -199,7 +199,6 @@ a {
 
 .overlayLeft {
   transform: translateX(-20%);
-  background-image: url("public/airplane.gif");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 80%;
