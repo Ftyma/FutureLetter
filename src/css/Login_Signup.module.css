@@ -216,7 +216,7 @@ a {
 .overlayRight {
   right: 0;
   transform: translateX(0);
-  background-image: url("public/smiley.gif");
+  background-image: url("letter.png");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 80%;
