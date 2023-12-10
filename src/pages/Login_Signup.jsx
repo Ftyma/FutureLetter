@@ -130,6 +130,7 @@ const Login_Signup = () => {
             </div>
             <div className={`${styles.overlayPanel} ${styles.overlayRight}`}>
               <div className={styles.createAccBox}>
+                <img src="airplane.fig"></img>
                 <h1 className="font-bold text-xl text-black">Hello, Friend!</h1>
                 <p>Let's start your journey with us.</p>
                 <button
