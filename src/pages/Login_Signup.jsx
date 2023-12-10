@@ -115,8 +115,8 @@ const Login_Signup = () => {
         <div className={styles.overlayContainer}>
           <div className={styles.overlay}>
             <div className={`${styles.overlayPanel} ${styles.overlayLeft}`}>
-              <div className="welcome-box">
-                <h1 className="font-bold text-xl text-black">
+              <div>
+                <h1 className="font-bold text-xl text-black z-10">
                   Welcome Back, Friend!
                 </h1>
                 <button
