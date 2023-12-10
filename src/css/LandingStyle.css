@@ -1,0 +1,121 @@
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background,
+.foreground,
+.foreground1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  z-index: -1;
+  margin-top: 20px;
+}
+
+.background {
+  transform: translateZ(-20px) scale(4);
+  opacity: 50%;
+}
+
+.foreground1 {
+  transform: translateZ(-100px) scale(70);
+  transform: translateY(-10px) scale(2);
+}
+.foreground {
+  transform: translateZ(-5px) scale(2);
+}
+
+.title {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: #7cb5d3;
+  width: 60%;
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  position: relative;
+  bottom: 5rem;
+  /* text-shadow: 0 0 15px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white; */
+}
+
+.subtitle {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: lightblue;
+  -webkit-text-fill-color: lightblue;
+  text-align: center;
+}
+
+.tagline {
+  position: relative;
+  font-size: 6rem;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  color: gray;
+  width: 50%;
+  text-align: start;
+  -webkit-text-stroke-width: 2px;
+  top: 20rem;
+  left: 25rem;
+}
+
+.login-btn {
+  display: flex;
+  position: absolute;
+  top: 35rem;
+  left: 37%;
+  font-size: 20px;
+  font-weight: 300;
+  color: gray;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 30px;
+  padding-inline: 4rem;
+  padding-block: 5px;
+  text-align: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .background {
+    transform: translateZ(-10px) scale(4);
+  }
+
+  .title {
+    font-size: 3.7rem;
+    width: 85%;
+    bottom: 5rem;
+  }
+
+  .tagline {
+    font-size: 3rem;
+
+    top: 8rem;
+    left: 3.5rem;
+    margin: auto;
+  }
+
+  .login-btn {
+    top: 26rem;
+    left: 30%;
+    font-size: 15px;
+    padding-inline: 2.5rem;
+    padding-block: 2px;
+  }
+}
