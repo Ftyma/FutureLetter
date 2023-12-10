@@ -114,7 +114,10 @@ const Login_Signup = () => {
 
         <div className={styles.overlayContainer}>
           <div className={styles.overlay}>
-            <div className={`${styles.overlayPanel} ${styles.overlayLeft}`}>
+            <div
+              background="airplane.gif"
+              className={`${styles.overlayPanel} ${styles.overlayLeft}`}
+            >
               <div className="welcome-box">
                 <h1 className="font-bold text-xl text-black">
                   Welcome Back, Friend!
@@ -128,9 +131,11 @@ const Login_Signup = () => {
                 </button>
               </div>
             </div>
-            <div className={`${styles.overlayPanel} ${styles.overlayRight}`}>
+            <div
+              background="smiley.gif"
+              className={`${styles.overlayPanel} ${styles.overlayRight}`}
+            >
               <div className={styles.createAccBox}>
-                <img src="airplane.gif"></img>
                 <h1 className="font-bold text-xl text-black">Hello, Friend!</h1>
                 <p>Let's start your journey with us.</p>
                 <button
