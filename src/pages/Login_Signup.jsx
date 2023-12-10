@@ -120,7 +120,7 @@ const Login_Signup = () => {
                   Welcome Back, Friend!
                 </h1>
                 <button
-                  className={styles.myButton.ghost}
+                  className={`${styles.myButton.ghost}`}
                   id="signIn"
                   onClick={handleButtonClick}
                 >
@@ -138,7 +138,7 @@ const Login_Signup = () => {
                 <h1 className="font-bold text-xl text-black">Hello, Friend!</h1>
                 <p>Let's start your journey with us.</p>
                 <button
-                  className={styles.myButton.ghost}
+                  className={`${styles.myButton.ghost}`}
                   id="signUp"
                   onClick={handleButtonClick}
                 >
