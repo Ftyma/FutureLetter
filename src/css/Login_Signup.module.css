@@ -71,10 +71,18 @@ a {
   outline: none;
 }
 
-.myButton.ghost {
-  background-color: transparent !important;
+.myBtn {
+  background-color: white;
   border-color: #ffffff;
-  border: 2px solid #008ecf;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 3px 15px;
+  margin-top: 1rem;
+  opacity: 80%;
+  color: black;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 10px;
 }
 
 .myForm {
@@ -215,7 +223,6 @@ a {
 .overlayRight {
   right: 0;
   transform: translateX(0);
-  background-image: url("letter.png");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 80%;

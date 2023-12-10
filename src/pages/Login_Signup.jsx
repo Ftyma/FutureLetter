@@ -120,7 +120,7 @@ const Login_Signup = () => {
                   Welcome Back, Friend!
                 </h1>
                 <button
-                  className={`${styles.myButton.ghost}`}
+                  className={`${styles.myBtn}`}
                   id="signIn"
                   onClick={handleButtonClick}
                 >
@@ -134,11 +134,13 @@ const Login_Signup = () => {
               />
             </div>
             <div className={`${styles.overlayPanel} ${styles.overlayRight}`}>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="absolute top-1.09/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                 <h1 className="font-bold text-xl text-black">Hello, Friend!</h1>
-                <p>Let's start your journey with us.</p>
+                <p className="text-black">
+                  If you have an account yet, come join us!
+                </p>
                 <button
-                  className={`${styles.myButton.ghost}`}
+                  className={`${styles.myBtn}`}
                   id="signUp"
                   onClick={handleButtonClick}
                 >
