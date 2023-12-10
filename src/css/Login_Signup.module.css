@@ -199,7 +199,7 @@ a {
 
 .overlayLeft {
   transform: translateX(-20%);
-  background-image: url("airplane.gif");
+  background-image: url("public/airplane.gif");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 80%;
@@ -216,7 +216,7 @@ a {
 .overlayRight {
   right: 0;
   transform: translateX(0);
-  background-image: url("smiley.gif");
+  background-image: url("public/smiley.gif");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 80%;
