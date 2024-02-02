@@ -8,6 +8,8 @@ export default {
         blue: "#008ECF",
         purple: "#9E28B5",
         white: "#FFFFFF",
+        darkgreen: "#1a472a",
+        beige: "#f6f1ee",
       },
     },
     screens: {

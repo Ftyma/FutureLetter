@@ -1,28 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
-
-/* :global(#root) {
-  width: 70%;
-  margin: auto;
-  justify-content: center;
-  align-content: center;
-  display: flex;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-:global(body) {
-  background: #f6f5f7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: "Montserrat", sans-serif;
-  height: 100vh;
-  margin: -20px 0 50px;
-} */
-
 p {
   font-size: 14px;
   font-weight: 100;
@@ -41,6 +16,7 @@ a {
   text-decoration: none;
   margin: 15px 0;
 }
+
 .main {
   display: flex;
   justify-content: center;
@@ -52,8 +28,8 @@ a {
 
 .myButton {
   border-radius: 20px;
-  background-color: #008ecf !important;
-  color: black !important;
+  background-color: #1a472a !important;
+  color: #f6f1ee !important;
   font-size: 12px;
   font-weight: bold;
   padding: 8px 30px !important;
@@ -72,21 +48,19 @@ a {
 }
 
 .myBtn {
-  background-color: white;
-  border-color: #ffffff;
-  border: 2px solid black;
+  background-color: #f6f1ee;
+  border: 1px solid #1a472a;
   border-radius: 20px;
-  padding: 3px 15px;
+  padding: 5px 15px;
   margin-top: 1rem;
   opacity: 80%;
-  color: black;
+  color: #1a472a;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .myForm {
-  background-color: #ffffff;
+  background-color: #f6f1ee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,10 +68,11 @@ a {
   padding: 4px 50px;
   height: 100%;
   text-align: center;
+  color: #1a472a;
 }
 
 .myInput {
-  background-color: #eee;
+  background-color: #ffffff;
   border: none;
   padding: 12px 10px !important;
   margin: 8px 5px !important;
@@ -239,5 +214,4 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.8;
 }

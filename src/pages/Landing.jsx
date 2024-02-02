@@ -7,7 +7,7 @@ const Landing = () => {
 
   const goLogin = () => {
     console.log("heloo");
-    navigate("/login_signup");
+    navigate("/letter");
   };
 
   return (

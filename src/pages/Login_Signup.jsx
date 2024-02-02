@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../css/Login_Signup.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login_Signup = () => {
+  let navigate = useNavigate();
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [registerData, setRegisterData] = useState({
     username: "",
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
 
   const handleButtonClick = (event) => {
     const container = document.getElementById("container");
@@ -22,45 +23,62 @@ const Login_Signup = () => {
 
   const url = import.meta.env.VITE_API;
 
-  const handleRegisterChange = ({ currentTarget: input }) => {
-    setRegisterData({ ...registerData, [input.name]: input.value });
+  const goLetter = () => {
+    navigate("/letter");
   };
 
-  const handleLoginChange = ({ currentTarget: input }) => {
-    setLoginData({ ...loginData, [input.name]: input.value });
+  const handleRegisterChange = (e) => {
+    const { name, value } = e.target;
+    setRegisterData({
+      ...registerData,
+      [name]: value,
+    });
   };
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      await axios.post(`${url}/users`, registerData).then((res) => {
-        console.log(res.registerData);
-      });
+      const res = await axios.post(`${url}/auth/register`, registerData);
+      console.log(res.data);
+      if (res) {
+        setRegisterData({ username: "", email: "", password: "" });
+        alert("successfuly register");
+      }
     } catch (error) {
-      console.log(error);
+      console.error(error.response.data);
     }
+  };
+
+  const handleLoginChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData({
+      ...loginData,
+      [name]: value,
+    });
   };
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      await axios.post(url, data).then((res) => {
-        console.log(res.data);
-        alert("sucessful login");
-      });
+      const res = await axios.post(`${url}/auth/login`, loginData);
+      console.log(res.data);
+      goLetter();
     } catch (error) {
-      console.log(error);
+      console.error(error.response.data);
     }
   };
 
   return (
     <div className={styles.main}>
+      {/* create account form */}
       <div
         className={`${styles.container} ${styles.rightPanelActive}`}
         id="container"
       >
         <div className={`${styles.formContainer} ${styles.signUpContainer}`}>
-          <form className={styles.myForm} onSubmit={handleRegisterSubmit}>
+          <form className={styles.myForm}>
             <h1 className="font-bold text-2xl mb-4">Create Account</h1>
             <input
               type="text"
@@ -89,26 +107,43 @@ const Login_Signup = () => {
               required
               className={styles.myInput}
             />
-            <button type="submit" className={styles.myButton}>
+            <button
+              type="submit"
+              onClick={handleRegisterSubmit}
+              className={styles.myButton}
+            >
               Sign Up
             </button>
           </form>
         </div>
 
+        {/* login form */}
         <div className={`${styles.formContainer} ${styles.signInContainer}`}>
           <form className={styles.myForm}>
             <h1 className="font-bold text-2xl mb-4">Sign in</h1>
             <input
               type="email"
+              name="email"
               placeholder="Email"
               className={styles.myInput}
+              value={loginData.email}
+              onChange={handleLoginChange}
             />
             <input
               className={styles.myInput}
               type="password"
+              name="password"
               placeholder="Password"
+              value={loginData.password}
+              onChange={handleLoginChange}
             />
-            <button className={styles.myButton}>Sign In</button>
+            <button
+              className={styles.myButton}
+              type="submit"
+              onClick={handleLoginSubmit}
+            >
+              Sign In
+            </button>
           </form>
         </div>
 
@@ -116,7 +151,7 @@ const Login_Signup = () => {
           <div className={styles.overlay}>
             <div className={`${styles.overlayPanel} ${styles.overlayLeft}`}>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                <h1 className="font-bold text-xl text-black ">
+                <h1 className="font-bold text-2xl text-beige">
                   Welcome Back, Friend!
                 </h1>
                 <button
@@ -128,17 +163,17 @@ const Login_Signup = () => {
                 </button>
               </div>
               <img
-                src="airplane.gif"
+                src="totoro.gif"
                 className={`${styles.backgroundImg}`}
                 alt="airplaneGIF"
               />
             </div>
             <div className={`${styles.overlayPanel} ${styles.overlayRight}`}>
               <div className="absolute top-1.09/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                <h1 className="font-bold text-xl text-black">Hello, Friend!</h1>
-                <p className="text-black">
-                  If you have an account yet, come join us!
-                </p>
+                <h1 className="font-bold text-2xl text-beige">
+                  Hello, New Friend!
+                </h1>
+
                 <button
                   className={`${styles.myBtn}`}
                   id="signUp"
@@ -148,7 +183,7 @@ const Login_Signup = () => {
                 </button>
               </div>
               <img
-                src="smiley.gif"
+                src="hello.gif"
                 className={`${styles.backgroundImg}`}
                 alt="smileyGIF"
               />
